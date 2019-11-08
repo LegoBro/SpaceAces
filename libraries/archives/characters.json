@@ -1,0 +1,245 @@
+{
+  "characters":{
+    "halley_wales":{
+      "display":"Halley Wales",
+      "color":"blue",
+      "class":"Scout",
+      "yob":"3121",
+      "planet":"Erus",
+      "background":"Halley grew up in a heavily protected household.  During her childhood, she won many footraces where her passion for speed sprouted.  She joined the Intergalactic Space Rangers when she was only 19, with encouragement from her older brother.  With the IGSR, Halley has been launched on many various missions.  Some say she still takes a morning jog around the HQ."
+    },
+    "chip_rogers":{
+      "display":"Chip Rogers",
+      "color":"dark_blue",
+      "class":"Soldier",
+      "yob":"3109",
+      "planet":"Unknown",
+      "background":"Chip Rogers grew up in a humble farmstead with his two parents and younger brother, Cain.  Chip was always fascinated with the idea of making the world a better place, so he naturally wanted to enlist in the IGSR.  He left his family soon after.  He has been launched into battle many times, and is still faithful to the IGSR today, despite family problems."
+    },
+    "spud_stark":{
+      "display":"Spud Stark",
+      "color":"dark_gray",
+      "class":"Sniper",
+      "yob":"3117",
+      "planet":"Intu",
+      "background":"Spud had a slingshot when he was very little.  At just the age of 5, he became a crackshot with it.  He later got a minirifle which he mastered almost immediately.  Noticing his skill, his father decided to send him off to the IGSR.  At the HQ, Spud became a Sharp-Shooter and eventually started the Sharp-Shooting League.  The SSL has become a very widely used sniping unit."
+    },
+    "db_nebula":{
+      "display":"D.B. Nebula",
+      "color":"aqua",
+      "class":"Bomber",
+      "yob":"3111",
+      "planet":"Elista",
+      "background":"D. B. Nebula grew up in a volatile household.  D. B. Lived near a scrapyard where he built many explosives with leftover fireworks.  As a teenager, he helped clear out a path for the IGSR.  They realized how useful his knowledge of explosives could be, so they enlisted him in the IGSR, and he's been around ever since."
+    },
+    "reginald_shultz":{
+      "display":"Reginald Shultz",
+      "color":"dark_purple",
+      "class":"Cannon",
+      "yob":"2997",
+      "planet":"Vesna",
+      "background":"Reginald Shultz is naturally strong.  An olympic event is hosted every 3 years between the planets Vesna and Sheridan.  Reginald was chosen for the arena event.  While being droped off by a S-Viper III, his opponent, Barge Hernandez, ripped the wing cannon off the ship.  Reginald copied Barge for a fair game.  The crowds went ecstatic.  They dodged each other’s shots until finally Reginald landed a hit, leaving Barge to the paramedics.  Rumors flew about the event and later the IGSR, interested in hiring new members, talked to Reginald."
+    },
+    "liz_ericson":{
+      "display":"Liz Ericson",
+      "color":"light_purple",
+      "class":"Healer",
+      "yob":"3104",
+      "planet":"Zaav",
+      "background":"Liz always enjoyed helping people, and wanted to do even more.  She gladly cared for her grandma, until her tragic death in 3117.  Her parents noticed how unhappy she was and decided to take her to a local nurse presentation by the IGSR.  Liz grew a deep interest in the medical field, and decided to take a course as a field paramedic.  She highly enjoyed the course, and that’s what she’s been doing so ever since."
+    },
+    "steve_manning":{
+      "display":"Steve Manning",
+      "color":"gold",
+      "class":"Brawler",
+      "yob":"3100",
+      "planet":"Zebilia",
+      "background":"Steve was part of a muscle multiplication project by the IGSR.  He was scrawny before the experiment, but very large afterwards.  He chose a close-range weapon to give his enemies ''a chance to change their pants after they saw him.''  It's a good thing he has a sense of humor."
+    },
+    "sky_florence":{
+      "display":"Sky Florence",
+      "color":"green",
+      "class":"Mobility",
+      "yob":"Unknown",
+      "planet":"Delta 7",
+      "background":"Sky Florence, grew up in a rich household.  He was raised loyal to the IGSR, coming from a long line of IGSR veterans.  Trained as a mobile trooper, Sky has much experience with a grappling hook.  He has likely proven his bloodline."
+    },
+    "johnny_sprocket":{
+      "display":"Johnny Sprocket",
+      "color":"dark_gray",
+      "class":"Mechanic",
+      "yob":"Unknown",
+      "planet":"Lkanst",
+      "background":"Johnny Sprocket was a very intelligent young student of physical mechanics and circuiting.  He eventually received government funding for his studies.  Unfortunately, Lkanst is a very militaristic planet, sending Johnny to the IGSR to aid in creating new weapons."
+    },
+    "chatter_barnes":{
+      "display":"Chatter Barnes",
+      "color":"white",
+      "class":"Infiltraitor",
+      "yob":"Unknown",
+      "planet":"Unknown",
+      "background":"Brad Barnes was previously a high school teacher for a RLU occupied planet.  He commonly used the phrase ''Cut the Chatter,'' to quiet down his class.  One day the IGSR came into contact with him and paid him favorably to spy on the RLU.  He is now retired from teaching, going full into the spy force for the IGSR."
+    },
+    "howard_barton":{
+      "display":"Howard Barton",
+      "color":"gray",
+      "class":"Scientist",
+      "yob":"Unknown",
+      "planet":"New Finland",
+      "background":"Howard Barton was born on the wealthy planet of New Finland.  New Finland heavily emphasized learning, and everyone is forced to go to school from ages 3-20.  The IGSR sometimes comes by to hire the most intelligent, the top of the class, and the most studious students.  Howard Barton was hired when he was 11.  Ever since, he has proved to be a very useful asset in many areas of research."
+    },
+    "anne_schmidt":{
+      "display":"Anne Schmidt",
+      "color":"yellow",
+      "class":"Pyro",
+      "yob":"Unknown",
+      "planet":"Sahara",
+      "background":"Anne Schmidt was born on the desert planet Sahara.  The planet is known for it's very hot days, and lack of water.  Anne worked as a water farmer with her parents.  The IGSR needed a new person to test a flame suit, but it required high resistance to heat.  They picked up Anne, thinking she would have a higher resistance to heat than most people.  While many soldiers thought they could use this set, only Anne really could."
+    },
+    "antonio_goodman":{
+      "display":"Antonio Goodman",
+      "color":"dark_red",
+      "class":"Seeker",
+      "yob":"Unknown",
+      "planet":"New Greenland",
+      "background":"Antonio was trained as a member of the RLU from early childhood.  He became rather experienced with close quarters combat.  Later, he realized the intentions of the RLU, and decided that he was going to side with the IGSR."
+    },
+    "race_lago":{
+      "display":"Race Lago",
+      "color":"yellow",
+      "class":"Shocksmith",
+      "yob":"Unknown",
+      "planet":"Unknown",
+      "background":"Race, a very iconic figure, was rumored to have been born on a space fighter in combat.  He was a renowned space merchant, known all over the universe for his highly protected space vessels.  Once the RLU started to increase rapidly, however, Race decided that he could not afford to have them around for very long.  He joined the IGSR more as a publicity stunt at first to increase his profits, but after being part of it a while, he made the force a full time job."
+    },
+    "maria_mercendesz":{
+      "display":"Maria Mercendesz",
+      "color":"dark_aqua",
+      "class":"Rocketeer",
+      "yob":"Unknown",
+      "planet":"Zaav",
+      "background":"Maria Mercédesz was raised in a rough third-world section of the planet Zaav.  Her family was so poor that they had no choice but to sell her when she was just nine years old.  She didn't like her owner, so she ran away, looking for a new life.  She found out about the IGSR and decided to join."
+    },
+
+    "gunn_frobe":{
+      "display":"Gunn Frobe",
+      "color":"blue",
+      "class":"Scout",
+      "yob":"3117",
+      "planet":"Neskolla",
+      "background":"Gunther Frobe grew up in a large, poverty-stricken family.  Gunther was the youngest of seven children.  He eventually learned to outpace his stronger, older siblings.  This is how he became known as Gunn, the name of a comet.  His father always had a distrust to the IGSR, likely causing Gunn's illegal path."
+    },
+    "cain_rogers":{
+      "display":"Cain Rogers",
+      "color":"dark_blue",
+      "class":"Soldier",
+      "yob":"3109",
+      "planet":"Unknown",
+      "background":"Cain Rogers, grew up in a humble farmstead with his two parents and older brother Chip.  Cain rarely fought with his brother, and the two generally stayed out of trouble.  Once Chip left home to join the IGSR, however, Cain lost some respect for his brother.  Cain was left to take care of the brothers’ parents and homestead.  He was forced to slowly watch them grow old and die.  Once Cain was alone, he decided to sell the farmland and search for his brother.  He ended up with the wrong people and joined the Raiders League United.  There, he become one of the most feared among the group.  Still, somewhere inside of him, he longs for his brother."
+    },
+    "jenn_spurs":{
+      "display":"Jenn Spurs",
+      "color":"dark_gray",
+      "class":"Sniper",
+      "yob":"3114",
+      "planet":"Tarvos 5",
+      "background":"Jenn wore eyeglasses for a large quantity of her life; she was legally blind.  However, Howard Barton, a scientist from the IGSR, created a special treatment for her condition.  It worked very well, so well her eyesight actually is superior to that of a normal person.  Sadly, the treatment had a major side affect; she forgot many major memories in her life.  Howard classified it as Large Memory Loss (LML).  Jenn eventually ran away.  Members of the Space Pirates agreed to help her recover memories if she joined them.  The RLU never finished the deal and Jenn forgot completely everything about it.  Her supervision made her naturally inclined to use a sniper rifle of some sort."
+    },
+    "twitchy_mcghee":{
+      "display":"Twitchy McGhee",
+      "color":"aqua",
+      "class":"Bomber",
+      "yob":"Unknown",
+      "planet":"Unknown",
+      "background":"Little is known about Twitchy McGhee, not even his real name.  However, it is widely known that he likes explosives.  It is even rumored he is so destructive the RLU removed him from capture missions, due to nothing being left to capture."
+    },
+    "barge_hernandez":{
+      "display":"Barge Hernandez",
+      "color":"dark_purple",
+      "class":"Cannon",
+      "yob":"2997",
+      "planet":"Sheridan",
+      "background":"Barge grew up pumping iron, he was obsessed with muscles and competition.  An olympic event is hosted every 3 years between the planets Vesna and Sheridan.  Barge was chosen for the arena event.  While being dropped off by a S-Viper III he ripped the wing cannon off the ship.  His opponent, Reginald copied Barge for a fair game.  The crowds went ecstatic.  They dodged each other’s shots until finally Reginald landed a hit, leaving Barge to the paramedics.  Upset about his loss, he still thought he could beat his opponent.  He joined the Space Pirates, just so he could fight his old opponent, Reginald, and regain his victory."
+    },
+    "star_workman":{
+      "display":"Star Workman",
+      "color":"light_purple",
+      "class":"Healer",
+      "yob":"3112",
+      "planet":"Nightfall",
+      "background":"Star and her parents were at the Grand Nightfall Station when a Space Pirate attack occured.  Her parents fled, leaving her to the Pirates.  They raised her and taught her to bandage the soldiers after battles.  When she was 17, they begain taking her along on major battles.  She was a very valuable resource.  She still works for them today."
+    },
+    "moose_sayjack":{
+      "display":"Moose Sayjack",
+      "color":"gold",
+      "class":"Brawler",
+      "yob":"3110",
+      "planet":"Barracuda 3",
+      "background":"Moose was beat up a lot when he was little.  He eventually took steriods to help him defend himself;  He went from bullied to bully.  He was so mean the Space Pirates wanted him on their side."
+    },
+    "spike_wong":{
+      "display":"Spike Wong",
+      "color":"green",
+      "class":"Mobility",
+      "yob":"Unkown",
+      "planet":"Jahmen",
+      "background":"After the New China New Japan War, Spike was deported to the junking planet, Jahmen, where he lived in squalor with his family.  He wanted to help them, but realized his only choice was to join the local government.  This government was eventually taken over by the RLU, because they saw the value of the scrap.  Spike was eventually incorporated in the RLU."
+    },
+    "viz_barclay":{
+      "display":"Viz Barclay",
+      "color":"dark_gray",
+      "class":"Mechanic",
+      "yob":"3089",
+      "planet":"Lunarian Beta",
+      "background":"Viz listened to stories of travelers and merchants passing by.  One traveler introduced the idea of entropy to Viz.  This idea influenced his thinking so much, he dedicated his life to it.  He wanted to raise awareness of this idea, but it was slowly turning him insane.  He is now working for the RLU, who promised to fund his studies at the cost of the creation of weapons."
+    },
+    "whitney_eclipse":{
+      "display":"Whitney Eclipse",
+      "color":"white",
+      "class":"Infiltraitor",
+      "yob":"Unknown",
+      "planet":"Unknown",
+      "background":"Whitney Eclipse, possibly born on the planet Icelance, is a very dangerous spy for the RLU.  Her tactics usually involve seducing young IGSR members into giving information.  She is very dangerous and must be stopped."
+    },
+    "jasper_smith":{
+      "display":"Jasper Smith",
+      "color":"gray",
+      "class":"Scientist",
+      "yob":"Unknown",
+      "planet":"New Finland",
+      "background":"Jasper Smith was hired along side Howard Barton.  However Jasper was 19 and Howard was only 11.  Howard and Jasper worked on special chemicals that could be formed from thin air.  However, Howard received all the credit.  Jasper decided to join the RLU where he would be more appreciated."
+    },
+    "brim_rock":{
+      "display":"Brim Rock",
+      "color":"yellow",
+      "class":"Pyro",
+      "yob":"Unknown",
+      "planet":"Meltdown",
+      "background":"Brim Rock was born on the planet Meltdown.  Most people from this planet have poor tempers, due to it being considered normal for a couple hundred years.  Brim is no exception to this rule.  The RLU was working near this planet and decided to pick up a few soldiers for a later mission.  Brim was chosen, and the RLU equipped him with a heated weapon."
+    },
+    "sarah_salis":{
+      "display":"Sarah Salis",
+      "color":"dark_red",
+      "class":"Seeker",
+      "yob":"Unknown",
+      "planet":"Unknown",
+      "background":"Sarah Salis is a newly founded member of the RLU, and very little is known about her."
+    },
+    "jafan_kesysk":{
+      "display":"Jafan Kesysk",
+      "color":"yellow",
+      "class":"Shocksmith",
+      "yob":"Unknown",
+      "planet":"Sheridan",
+      "background":"Jafan spent the first twenty years of his life on the planet Sheridan never going anywhere and never doing anything.  He had a dead-end job at a local instant food chain.  That is where he realized that he couldn't do much on Sheridan, and decided to get off the planet as soon as possible.  He decided to join the first crew leaving the planet, which happened to be a RLU pirate ship.  He still hasn't regretted his choice."
+    },
+    "komang_zlatan":{
+      "display":"Komang Zlatan",
+      "color":"dark_aqua",
+      "class":"Rocketeer",
+      "yob":"Unknown",
+      "planet":"Dhanee",
+      "background":"Komang Zlatan, born as a prince of the planet Dhanee, lived a very rich life.  Being so rich, he naturally was careless with everything he owned.  His father told him that he couldn't be king the way he acted.  Komang didn't let up, however, and he was put into a boarding school.  He eventually dropped out and went off on his own with nothing.  He could never get used to being poor, so he quickly joined the RLU, who promised him of getting rich quick."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id":12,
+  "name":"Pyro",
+  "description":"a tanky, fiery loadout",
+  "health":300,
+  "speed":95,
+  "aim_speed":95,
+  "item_color":"gold",
+  "helmet_color":"15202048",
+  "style": ["Guardian","green"],
+  "primary": {
+    "type":"melee",
+    "slash":false,
+    "fire":1,
+    "name":"super_heated_glove",
+    "cool_down":0.5,
+    "damage":30
+  },
+  "secondary": {
+    "name":"fire_bomb",
+    "duration":2,
+    "recharge":100,
+    "lore_lines":2
+  },
+  "tertiary": {
+    "name":"self_immunity",
+    "duration":100,
+    "recharge":240,
+    "lore_lines":2
+  }
+}

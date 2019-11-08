@@ -1,0 +1,44 @@
+{
+  "id":6,
+  "name":"Healer",
+  "description":"a loadout focused entirely on healing",
+  "health":100,
+  "speed":130,
+  "aim_speed":110,
+  "item_color":"light_purple",
+  "helmet_color":"16716527",
+  "style": ["Sustainer","light_purple"],
+  "primary": {
+    "type":"gun",
+    "name":"heal_pistol",
+    "ammo":10,
+    "projectile_amount":1,
+    "delay":4,
+    "reload":30,
+    "sounds": {
+      "shoot":"gun.heal_pistol",
+      "reload":"gun.reload"
+    },
+    "projectile": {
+      "name":"heal_pistol",
+      "damage":7,
+      "speed":0,
+      "falloff":1,
+      "falloffstart":20,
+      "heal":7,
+      "inaccuracy":0
+    }
+  },
+  "secondary": {
+    "name":"over_heal",
+    "duration":200,
+    "recharge":300,
+    "lore_lines":2
+  },
+  "tertiary": {
+    "name":"health_pack",
+    "duration":60,
+    "recharge":300,
+    "lore_lines":3
+  }
+}

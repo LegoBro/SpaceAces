@@ -1,0 +1,44 @@
+{
+  "id":9,
+  "name":"Mechanic",
+  "description":"a loadout focused on construcing turrets",
+  "health":150,
+  "speed":110,
+  "aim_speed":95,
+  "item_color":"dark_gray",
+  "helmet_color":"6513507",
+  "style": ["Guardian","green"],
+  "primary": {
+    "type":"gun",
+    "name":"double_chambered_scattergun",
+    "ammo":2,
+    "projectile_amount":6,
+    "delay":20,
+    "reload":50,
+    "sounds": {
+      "shoot":"gun.shotgun",
+      "reload":"gun.reload"
+    },
+    "projectile": {
+      "name":"shotgun",
+      "damage":7,
+      "speed":0,
+      "falloff":1,
+      "falloffstart":10,
+      "heal":0,
+      "inaccuracy":7
+    }
+  },
+  "secondary": {
+    "name":"turret",
+    "duration":100,
+    "recharge":500,
+    "lore_lines":3
+  },
+  "tertiary": {
+    "name":"wrench",
+    "duration":15,
+    "recharge":30,
+    "lore_lines":3
+  }
+}

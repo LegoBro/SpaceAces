@@ -1,0 +1,30 @@
+{
+  "id":7,
+  "name":"Brawler",
+  "description":"a tanky melee loadout",
+  "health":400,
+  "speed":100,
+  "aim_speed":100,
+  "item_color":"gold",
+  "helmet_color":"16743705",
+  "style": ["Guardian","green"],
+  "primary": {
+    "type":"melee",
+    "slash":true,
+    "name":"phase_sword",
+    "cool_down":1,
+    "damage":20
+  },
+  "secondary": {
+    "name":"offensive_push",
+    "duration":100,
+    "recharge":400,
+    "lore_lines":4
+  },
+  "tertiary": {
+    "name":"defensive_stance",
+    "duration":80,
+    "recharge":300,
+    "lore_lines":3
+  }
+}

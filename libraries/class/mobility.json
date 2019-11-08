@@ -1,0 +1,44 @@
+{
+  "id":8,
+  "name":"Mobility",
+  "description":"a loadout based on vertical movement",
+  "health":100,
+  "speed":130,
+  "aim_speed":120,
+  "item_color":"green",
+  "helmet_color":"3669775",
+  "style": ["Striker","red"],
+  "primary": {
+    "type":"gun",
+    "name":"light_surge_rifle",
+    "ammo":15,
+    "projectile_amount":1,
+    "delay":3,
+    "reload":50,
+    "sounds": {
+      "shoot":"gun.rifle",
+      "reload":"gun.reload"
+    },
+    "projectile": {
+      "name":"light_rifle",
+      "damage":9,
+      "speed":0,
+      "falloff":2,
+      "falloffstart":15,
+      "heal":0,
+      "inaccuracy":1
+    }
+  },
+  "secondary": {
+    "name":"vertical_boost",
+    "duration":20,
+    "recharge":150,
+    "lore_lines":4
+  },
+  "tertiary": {
+    "name":"flash_drop",
+    "duration":10,
+    "recharge":200,
+    "lore_lines":3
+  }
+}

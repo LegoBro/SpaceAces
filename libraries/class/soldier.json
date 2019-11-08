@@ -1,0 +1,44 @@
+{
+  "id":2,
+  "name":"Soldier",
+  "description":"a perfectly balanced loadout",
+  "health":100,
+  "speed":125,
+  "aim_speed":90,
+  "item_color":"dark_blue",
+  "helmet_color":"176",
+  "style": ["Striker","red"],
+  "primary": {
+    "type":"gun",
+    "name":"surge_rifle",
+    "ammo":20,
+    "projectile_amount":1,
+    "delay":3,
+    "reload":50,
+    "sounds": {
+      "shoot":"gun.rifle",
+      "reload":"gun.reload"
+    },
+    "projectile": {
+      "name":"rifle",
+      "damage":8,
+      "speed":0,
+      "falloff":1,
+      "falloffstart":40,
+      "heal":0,
+      "inaccuracy":1
+    }
+  },
+  "secondary": {
+    "name":"plasma_grenade",
+    "duration":2,
+    "recharge":100,
+    "lore_lines":2
+  },
+  "tertiary": {
+    "name":"burst_heal",
+    "duration":25,
+    "recharge":200,
+    "lore_lines":2
+  }
+}

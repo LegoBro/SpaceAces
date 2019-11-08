@@ -1,0 +1,44 @@
+{
+  "id":1,
+  "name":"Scout",
+  "description":"a loadout focused entirely on speed",
+  "health":75,
+  "speed":150,
+  "aim_speed":125,
+  "item_color":"blue",
+  "helmet_color":"6541567",
+  "style": ["Striker","red"],
+  "primary": {
+    "type":"gun",
+    "name":"surge_pistol",
+    "ammo":8,
+    "projectile_amount":1,
+    "delay":3,
+    "reload":20,
+    "sounds": {
+      "shoot":"gun.heavy",
+      "reload":"gun.reload"
+    },
+    "projectile": {
+      "name":"pistol",
+      "damage":15,
+      "speed":0,
+      "falloff":1,
+      "falloffstart":20,
+      "heal":0,
+      "inaccuracy":0
+    }
+  },
+  "secondary": {
+    "name":"boost",
+    "duration":20,
+    "recharge":60,
+    "lore_lines":2
+  },
+  "tertiary": {
+    "name":"launch",
+    "duration":5,
+    "recharge":200,
+    "lore_lines":2
+  }
+}

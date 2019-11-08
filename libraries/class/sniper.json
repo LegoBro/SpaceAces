@@ -1,0 +1,44 @@
+{
+  "id":3,
+  "name":"Sniper",
+  "description":"a long-ranged loadout",
+  "health":100,
+  "speed":110,
+  "aim_speed":0,
+  "item_color":"black",
+  "helmet_color":"0",
+  "style": ["Striker","red"],
+  "primary": {
+    "type":"gun",
+    "name":"star_sniper",
+    "ammo":4,
+    "projectile_amount":1,
+    "delay":20,
+    "reload":60,
+    "sounds": {
+      "shoot":"gun.plasma",
+      "reload":"gun.reload"
+    },
+    "projectile": {
+      "name":"sniper",
+      "damage":70,
+      "speed":0,
+      "falloff":1,
+      "falloffstart":100,
+      "heal":0,
+      "inaccuracy":0
+    }
+  },
+  "secondary": {
+    "name":"vis_mine",
+    "duration":100,
+    "recharge":150,
+    "lore_lines":2
+  },
+  "tertiary": {
+    "name":"jump",
+    "duration":100,
+    "recharge":400,
+    "lore_lines":2
+  }
+}

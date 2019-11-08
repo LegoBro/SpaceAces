@@ -1,0 +1,51 @@
+{
+  "gamemodes":{
+    "duel":{
+      "display_name": "Duel",
+      "min_players": 2,
+      "rec_players": 2,
+      "maps":["moon_base","magma_forge","broken_city","dark_lair","reef_bunker"],
+      "extra":[]
+    },
+    "tdm":{
+      "display_name": "TDM",
+      "min_players": 2,
+      "rec_players": 4,
+      "maps":["ruins","aqua_base","dust_temple","snow_bowl","gray_caves"],
+      "extra":
+        [
+          "scoreboard players set blue_lives Numbers 10",
+          "scoreboard players set red_lives Numbers 10",
+          "bossbar set minecraft:blue name [\"\",{\"text\":\"IGSR Lives Left\",\"color\":\"blue\"}]",
+          "bossbar set minecraft:red name [\"\",{\"text\":\"RLU Lives Left\",\"color\":\"red\"}]",
+          "bossbar set minecraft:blue max 10",
+          "bossbar set minecraft:red max 10"
+        ]
+    },
+    "setback":{
+      "display_name": "Setback",
+      "min_players": 2,
+      "rec_players": 6,
+      "maps":["layered","frigate","arena","sewage","farm"],
+      "extra":
+        [
+          "scoreboard players set blueCapture Numbers 0",
+          "scoreboard players set redCapture Numbers 0",
+          "scoreboard players set point Numbers 0",
+          "bossbar set minecraft:blue name [\"\",{\"text\":\"IGSR Capture Progress\",\"color\":\"blue\"}]",
+          "bossbar set minecraft:red name [\"\",{\"text\":\"RLU Capture Progress\",\"color\":\"red\"}]",
+          "bossbar set minecraft:red max 240000",
+          "bossbar set minecraft:blue max 240000"
+        ]
+    },
+    "killstreak":{
+      "display_name": "Killstreak",
+      "min_players": 2,
+      "rec_players": 2,
+      "maps":["moon_base","magma_forge","broken_city","dark_lair","reef_bunker"],
+      "extra":[
+        "scoreboard players reset * kills"
+      ]
+    }
+  }
+}

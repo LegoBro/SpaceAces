@@ -1,0 +1,48 @@
+{
+  "id":15,
+  "name":"Rocketeer",
+  "description":"a tanky, explosive loadout",
+  "health":250,
+  "speed":95,
+  "aim_speed":75,
+  "item_color":"dark_aqua",
+  "helmet_color":"2774103",
+  "style": ["Guardian","green"],
+  "primary": {
+    "type":"launcher",
+    "name":"rocket_launcher",
+    "ammo":4,
+    "projectile_amount":1,
+    "delay":10,
+    "reload":50,
+    "fire_angle":0,
+    "sounds": {
+      "shoot":"gun.rocket",
+      "reload":"gun.reload"
+    },
+    "projectile": {
+      "name":"rocket",
+      "damage":8,
+      "speed":2,
+      "arc_rate":0,
+      "falloff":0,
+      "falloffstart":100,
+      "heal":0,
+      "inaccuracy":0,
+      "model":11150003,
+      "impact_command":"execute facing entity @p eyes run summon creeper ^ ^ ^1 {ExplosionRadius:2b,Fuse:0,ignited:1b}"
+    }
+  },
+  "secondary": {
+    "name":"piercing_dart",
+    "duration":10,
+    "recharge":100,
+    "lore_lines":2
+  },
+  "tertiary": {
+    "name":"resist",
+    "duration":60,
+    "recharge":400,
+    "lore_lines":2
+  }
+}
