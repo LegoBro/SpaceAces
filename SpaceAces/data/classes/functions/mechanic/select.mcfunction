@@ -1,0 +1,2 @@
+scoreboard players set @s Class 9
+tellraw @p {"text":"\nSelected Class Mechanic","color":"dark_gray","bold":true,"extra":[{"text":"\na loadout focused on construcing turrets","color":"gray","bold":false}]}

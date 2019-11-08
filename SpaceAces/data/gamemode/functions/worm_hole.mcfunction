@@ -1,0 +1,7 @@
+#These commands are ran by the wormhole sign
+tellraw @s ["",{"text":"[","color":"gray","bold":true},{"text":"Cargo Port","color":"white","clickEvent":{"action":"run_command","value":"/trigger worm_hole set 1"},"bold":false},{"text":"]","color":"gray","bold":true}]
+tellraw @s ["",{"text":"[","color":"gray","bold":true},{"text":"Training Desk","color":"dark_red","clickEvent":{"action":"run_command","value":"/trigger worm_hole set 2"},"bold":false},{"text":"]","color":"gray","bold":true}]
+tellraw @s ["",{"text":"[","color":"gray","bold":true},{"text":"Ship Console","color":"dark_green","clickEvent":{"action":"run_command","value":"/trigger worm_hole set 3"},"bold":false},{"text":"]","color":"gray","bold":true}]
+tellraw @s ["",{"text":"[","color":"gray","bold":true},{"text":"Mission Selection","color":"dark_blue","clickEvent":{"action":"run_command","value":"/trigger worm_hole set 4"},"bold":false},{"text":"]","color":"gray","bold":true}]
+tellraw @s ["",{"text":"[","color":"gray","bold":true},{"text":"Team Selection","color":"gold","clickEvent":{"action":"run_command","value":"/trigger worm_hole set 5"},"bold":false},{"text":"]","color":"gray","bold":true}]
+tellraw @s ["",{"text":"[","color":"gray","bold":true},{"text":"Archives","color":"aqua","clickEvent":{"action":"run_command","value":"/trigger worm_hole set 6"},"bold":false},{"text":"]","color":"gray","bold":true}]

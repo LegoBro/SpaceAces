@@ -1,0 +1,2 @@
+tellraw @a[tag=awaiting] ["",{"text":"[","color":"dark_gray","bold":true},{"text":"Mission startup disengaged, players on both teams are needed","color":"gray","clickEvent":{"action":"run_command","value":"trigger worm_hole set 1"},"bold":false},{"text":"]","color":"dark_gray"}]
+function gamemode:abort_game

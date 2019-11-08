@@ -1,0 +1,8 @@
+clear @s
+tp @s 8 195 14 180 0
+team join lobby @s
+tag @s remove awaiting
+tag @s remove play
+bossbar set main players @a[tag=awaiting]
+execute store result bossbar main max run scoreboard players get TotPlay Numbers
+execute store result bossbar main value run scoreboard players get RedPlay Numbers

@@ -1,0 +1,2 @@
+scoreboard players set @s Class 14
+tellraw @p {"text":"\nSelected Class Shocksmith","color":"dark_gray","bold":true,"extra":[{"text":"\nan energy focused support loadout","color":"gray","bold":false}]}
