@@ -7,7 +7,7 @@ scoreboard players reset @s[nbt={SelectedItemSlot:1},scores={rightClick=1..}] ri
 execute if entity @s[scores={activate_second=1}] run function classes:mechanic/turret/activate
 scoreboard players add @s[scores={activate_second=1..}] activate_second 1
 execute if entity @s[scores={activate_second=100}] run function classes:mechanic/turret/deactivate
-scoreboard players set @s[scores={activate_second=500..}] activate_second 0
+scoreboard players set @s[scores={activate_second=1000..}] activate_second 0
 execute if entity @s[scores={activate_third=0}] run replaceitem entity @s hotbar.2 carrot_on_a_stick{display:{Name:"{\"translate\":\"wrench\",\"color\":\"white\"}",Lore:["{\"translate\":\"wrench_lore1\",\"color\":\"white\"}","{\"translate\":\"wrench_lore2\",\"color\":\"white\"}","{\"translate\":\"wrench_lore3\",\"color\":\"white\"}"]},HideFlags:63,CustomModelData:11090002,Unbreakable:1}
 execute if entity @s[scores={activate_third=1..}] run replaceitem entity @s hotbar.2 gray_dye
 scoreboard players set @s[nbt={SelectedItemSlot:2},scores={rightClick=1..}] activate_third 1

@@ -33,9 +33,6 @@ const Constant = function(n) {
   }
 }
 
-// Gamemode generation
-
-
 // hitbox generation
 let hitboxes = `#Stores all hitboxes, which are used by all projectiles`;
 let generatedHB = fs.readdirSync("./hitboxes");

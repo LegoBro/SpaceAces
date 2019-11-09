@@ -32,7 +32,7 @@
   "secondary": {
     "name":"turret",
     "duration":100,
-    "recharge":500,
+    "recharge":1000,
     "lore_lines":3
   },
   "tertiary": {

@@ -21,7 +21,7 @@
     },
     "projectile": {
       "name":"cannon",
-      "damage":8,
+      "damage":5,
       "speed":0,
       "falloff":1,
       "falloffstart":40,

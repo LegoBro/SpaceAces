@@ -2,8 +2,8 @@
   "id":7,
   "name":"Brawler",
   "description":"a tanky melee loadout",
-  "health":400,
-  "speed":100,
+  "health":300,
+  "speed":90,
   "aim_speed":100,
   "item_color":"gold",
   "helmet_color":"16743705",
@@ -24,7 +24,7 @@
   "tertiary": {
     "name":"defensive_stance",
     "duration":80,
-    "recharge":300,
+    "recharge":500,
     "lore_lines":3
   }
 }

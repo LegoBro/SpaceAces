@@ -1,0 +1,51 @@
+Version 3.1 Changes:
+
+Major:
+
+New Gamemode Killstreak:
+Get 3 kills in a row to win
+if you die, your kills are reset
+a fun gamemode for 1v1's or even 2v2's.  It's up to you to figure out the best way to play
+
+Kills/Killfeed:
+Kills are now tracked, as well as a killfeed which displays who kills who
+kills are awarded to the last person to deal direct damage
+Kills also grant +1 xp each
+
+Lobby Changes:
+The lobby is so much better now...  
+
+Minor:
+
+Bombs now land better and deal more AOE damage
+Bomber and Rocketeer have felt lackluster, and with this improvement, they should feel like they fit their purpose more.
+Both have been nerfed in terms of direct-hit damage, but the AOE improvement will help greatly
+
+
+Class:
+Scout:
+changed firerate from 5 -> 3 (lower is faster)
+for a class that is entirely speed, scout shot way too slowly, maybe this will feel better
+
+Bomber:
+reduced direct-hit damage from 15 -> 10
+
+Rocketeer:
+reduced direct-hit damage from 15 -> 8
+
+Pyro:
+made fire-bomb land in a more circular pattern
+increased full hit damage from 15 -> 30
+Pyro didn't deal enough direct hit damage, which caused a hit and run strategy that wasn't all too fun
+
+Shocksmith:
+changed primary firerate from 15 -> 8 (lower is faster)
+increased direct-hit damage from 10 -> 15
+decreased aoe damage from 10 -> 5
+increased effective radius of energy sap from 5 -> 10
+Shocksmith felt a little slow to play as, and energy sap felt too situational
+Also, I wanted shocksmith to be able to win a 1v1 and not only function in larger groups.  The higher direct damage will help with this, but prevent shocksmith from becoming too powerful
+
+Gunner:
+decreased large heal from healing 150 -> 100
+Previously gunner was unkillable, so this nerf might help with that.  Gunner is supposed to feel hard to kill, but it should be possible against any class.
