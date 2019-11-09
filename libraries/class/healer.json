@@ -13,7 +13,7 @@
     "name":"heal_pistol",
     "ammo":10,
     "projectile_amount":1,
-    "delay":4,
+    "delay":6,
     "reload":30,
     "sounds": {
       "shoot":"gun.heal_pistol",
@@ -25,7 +25,7 @@
       "speed":0,
       "falloff":1,
       "falloffstart":20,
-      "heal":7,
+      "heal":10,
       "inaccuracy":0
     }
   },

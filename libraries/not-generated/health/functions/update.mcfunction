@@ -43,4 +43,4 @@ execute if entity @s[team=blue,tag=!entity] run function health:update_armor_blu
 execute if entity @s[team=red,tag=!entity] run function health:update_armor_red
 
 #Run if you die
-execute as @s[scores={health=..0},tag=!entity] at @s run function health:death
+execute as @s[gamemode=adventure,scores={health=..0},tag=!entity] at @s run function health:death

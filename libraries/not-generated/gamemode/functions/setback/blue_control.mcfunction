@@ -1,5 +1,5 @@
 execute as @a[team=blue,tag=in_game,distance=..5] if score point Numbers matches ..199 run scoreboard players add point Numbers 1
-execute as @a[team=red,distance=..5,tag=in_game] if score point Numbers matches 1.. run scoreboard players remove point Numbers 1
+execute as @a[team=red,distance=..5,tag=in_game] if score point Numbers matches -1.. run scoreboard players remove point Numbers 1
 bossbar set minecraft:blue players @a
 bossbar set minecraft:red players
 execute unless entity @a[team=red,tag=in_game,distance=..5] run scoreboard players operation blueCapture Numbers += point Numbers

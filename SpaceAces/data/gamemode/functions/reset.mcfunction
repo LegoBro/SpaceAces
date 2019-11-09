@@ -13,3 +13,4 @@ setblock 9 195 5 oak_wall_sign[facing=east]
 data merge block 9 195 5 {Text2:"{\"text\":\"[Exit]\",\"color\":\"dark_red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function gamemode:exit_team_selection\"}}"}
 setblock 7 195 5 oak_wall_sign[facing=west]
 data merge block 7 195 5 {Text2:"{\"text\":\"[Exit]\",\"color\":\"dark_red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function gamemode:exit_team_selection\"}}"}
+scoreboard players reset @a i

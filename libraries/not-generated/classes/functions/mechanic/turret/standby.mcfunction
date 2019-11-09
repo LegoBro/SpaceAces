@@ -8,4 +8,4 @@ scoreboard players add @s[scores={reload=5..}] reload 1
 scoreboard players set @s[scores={reload=7..},tag=standard] reload 0
 scoreboard players set @s[scores={reload=30..},tag=sniper] reload 0
 scoreboard players set @s[scores={reload=40..},tag=rocket_launcher] reload 0
-execute unless entity @e[tag=turret_base,sort=nearest,distance=...001] run kill @s
+execute unless entity @e[tag=turret_base,sort=nearest,distance=..1] run kill @s

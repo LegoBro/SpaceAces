@@ -36,7 +36,7 @@ execute if score @s[nbt={SelectedItemSlot:0},scores={shoot=1}] rightClick matche
 scoreboard players reset @s[nbt={SelectedItemSlot:0}] rightClick
 execute if score @s shoot matches 1 run function classes:healer/shoot
 scoreboard players add @s[scores={shoot=1..}] shoot 1
-scoreboard players set @s[scores={shoot=4..}] shoot 0
+scoreboard players set @s[scores={shoot=6..}] shoot 0
 scoreboard players add @s[scores={totalShots=10..,reload=0}] reload 1
 execute if score @s reload matches 1.. run function classes:healer/reload
 scoreboard players set @s[scores={crouching=1..}] crouching 0

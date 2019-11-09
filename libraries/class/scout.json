@@ -21,7 +21,7 @@
     },
     "projectile": {
       "name":"pistol",
-      "damage":15,
+      "damage":12,
       "speed":0,
       "falloff":1,
       "falloffstart":20,

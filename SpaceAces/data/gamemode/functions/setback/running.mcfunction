@@ -4,6 +4,7 @@ bossbar set minecraft:main max 200
 scoreboard players add captureSound i 1
 execute at @e[type=item_frame,tag=capture_point] if entity @p[team=!spectator,distance=..5] run bossbar set main players @a
 execute at @e[type=item_frame,tag=capture_point] unless entity @p[team=!spectator,distance=..5] run bossbar set main players
+execute if score point Numbers matches ..-1 run scoreboard players set point Numbers 0
 execute at @e[type=item_frame,tag=capture_point] if score point Numbers matches 0 if entity @p[team=blue,distance=..5] run setblock ~ ~-1 ~ lapis_block
 execute at @e[type=item_frame,tag=capture_point] if score point Numbers matches 0 if entity @p[team=red,distance=..5] run setblock ~ ~-1 ~ redstone_block
 execute at @e[type=item_frame,tag=capture_point] if score point Numbers matches 0 if entity @p[team=red,distance=..5] if entity @p[team=blue,distance=..5] run setblock ~ ~-1 ~ sea_lantern
