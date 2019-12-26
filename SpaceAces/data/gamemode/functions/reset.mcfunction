@@ -2,6 +2,7 @@
 data merge block 8 200 65 {Text2:"{\"text\":\"Launch Mission\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function gamemode:launch_game\"}}",Text3:"{\"text\":\"\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"\"}}"}
 execute as @a[tag=in_game] run function load:spawn
 tag @a[tag=in_game] remove in_game
+tag @a[tag=escape] remove escape
 execute as @a[team=spectator] run function load:spawn
 bossbar set blue players
 bossbar set red players
@@ -14,3 +15,8 @@ data merge block 9 195 5 {Text2:"{\"text\":\"[Exit]\",\"color\":\"dark_red\",\"b
 setblock 7 195 5 oak_wall_sign[facing=west]
 data merge block 7 195 5 {Text2:"{\"text\":\"[Exit]\",\"color\":\"dark_red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function gamemode:exit_team_selection\"}}"}
 scoreboard players reset @a i
+scoreboard players set waveDelay Numbers 0
+scoreboard players set wave Numbers 0
+scoreboard players set wave Numbers 0
+kill @e[tag=bot]
+kill @e[type=armor_stand,tag=door]

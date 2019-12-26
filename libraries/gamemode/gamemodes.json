@@ -1,4 +1,12 @@
 {
+  "default":{
+    "settings":{
+      "Random Classes":{
+        "id":5,
+        "style": "toggle"
+      }
+    }
+  },
   "gamemodes":{
     "duel":{
       "display_name": "Duel",
@@ -14,13 +22,21 @@
       "maps":["ruins","aqua_base","dust_temple","snow_bowl","gray_caves"],
       "extra":
         [
-          "scoreboard players set blue_lives Numbers 10",
-          "scoreboard players set red_lives Numbers 10",
+          "scoreboard players operation blue_lives Numbers = TDMLives Numbers",
+          "scoreboard players operation red_lives Numbers = TDMLives Numbers",
           "bossbar set minecraft:blue name [\"\",{\"text\":\"IGSR Lives Left\",\"color\":\"blue\"}]",
           "bossbar set minecraft:red name [\"\",{\"text\":\"RLU Lives Left\",\"color\":\"red\"}]",
-          "bossbar set minecraft:blue max 10",
-          "bossbar set minecraft:red max 10"
-        ]
+          "execute store result bossbar minecraft:blue max run scoreboard players get TDMLives Numbers",
+          "execute store result bossbar minecraft:red max run scoreboard players get TDMLives Numbers"
+        ],
+      "settings":{
+        "lives":{
+          "type":"integer",
+          "name":"Lives",
+          "scoreboard":"TDMLives",
+          "default":10
+        }
+      }
     },
     "setback":{
       "display_name": "Setback",
@@ -34,9 +50,23 @@
           "scoreboard players set point Numbers 0",
           "bossbar set minecraft:blue name [\"\",{\"text\":\"IGSR Capture Progress\",\"color\":\"blue\"}]",
           "bossbar set minecraft:red name [\"\",{\"text\":\"RLU Capture Progress\",\"color\":\"red\"}]",
-          "bossbar set minecraft:red max 240000",
-          "bossbar set minecraft:blue max 240000"
-        ]
+          "execute store result bossbar minecraft:red max run scoreboard players get setScore Numbers",
+          "execute store result bossbar minecraft:blue max run scoreboard players get setScore Numbers"
+        ],
+      "settings":{
+        "score":{
+          "type":"integer",
+          "name":"Score",
+          "scoreboard":"setScore",
+          "default":240000
+        },
+        "rate":{
+          "type":"integer",
+          "name":"Max Rate",
+          "scoreboard":"setRate",
+          "default":200
+        }
+      }
     },
     "killstreak":{
       "display_name": "Killstreak",
@@ -45,6 +75,45 @@
       "maps":["moon_base","magma_forge","broken_city","dark_lair","reef_bunker"],
       "extra":[
         "scoreboard players reset * kills"
+      ],
+      "settings":{
+        "killstreak":{
+          "type":"integer",
+          "name":"Killstreak",
+          "scoreboard":"killstreakKills",
+          "default":3
+        }
+      }
+    },
+    "escape":{
+      "display_name":"Escape",
+      "min_players":1,
+      "rec_players":2,
+      "maps":[],
+      "extra":[
+        "tag @a[tag=awaiting] add in_game",
+        "tag @a[tag=in_game] remove awaiting",
+        "bossbar set minecraft:main name [\"\",{\"text\":\"Next Wave\",\"color\":\"white\"}]",
+        "bossbar set main players @a[tag=in_game]",
+        "execute positioned 29960 4 10 run kill @e[tag=door,distance=..1000]",
+        "execute positioned 29960 4 10 run kill @e[tag=spawner,distance=..1000]",
+        "execute positioned 29960 4 10 run kill @e[tag=bot,distance=..1000]",
+        "execute positioned 29960 4 10 run kill @e[tag=terminal,distance=..1000]",
+        "scoreboard players set wave Numbers 1",
+        "scoreboard players set waveDelay Numbers 200",
+        "bossbar set minecraft:main max 200",
+        "scoreboard objectives modify display displayname {\"text\":\"Escape:\",\"color\":\"green\"}",
+        "scoreboard players reset Mission display",
+        "scoreboard players set currency Numbers 0",
+        "function gamemode:escape/unlock/entry",
+        "tag @a[tag=in_game] add escape",
+        "tag @a[tag=escape] add no_2",
+        "tag @a[tag=escape] add no_3",
+        "summon minecraft:area_effect_cloud 30004 2 56 {CustomNameVisible:1b,CustomName:'{\"translate\":\"terminal_0\"}',Duration:2000000000,Tags:[\"terminal\",\"active\"]}",
+        "summon minecraft:area_effect_cloud 29901 16 47 {CustomNameVisible:1b,CustomName:'{\"translate\":\"terminal_0\"}',Duration:2000000000,Tags:[\"terminal\",\"active\"]}",
+        "summon minecraft:area_effect_cloud 29911 16 -36 {CustomNameVisible:1b,CustomName:'{\"translate\":\"terminal_0\"}',Duration:2000000000,Tags:[\"terminal\",\"active\"]}",
+        "summon minecraft:area_effect_cloud 29924 40 -4 {CustomNameVisible:1b,CustomName:'{\"translate\":\"terminal_0\"}',Duration:2000000000,Tags:[\"terminal\",\"active\"]}",
+        "summon minecraft:area_effect_cloud 30008 2 45 {CustomNameVisible:1b,CustomName:'{\"translate\":\"terminal_0\"}',Duration:2000000000,Tags:[\"terminal\",\"active\"]}"
       ]
     }
   }

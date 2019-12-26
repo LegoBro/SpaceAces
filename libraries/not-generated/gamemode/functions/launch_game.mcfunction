@@ -1,5 +1,4 @@
 #Commands ran when game is launched
-data merge block 8 200 65 {Text2:"{\"text\":\"Abort Mission\",\"color\":\"red\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function gamemode:abort_game\"}}",Text3:"{\"text\":\"\",\"color\":\"green\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"\"}}"}
 execute at @a run playsound minecraft:block.conduit.deactivate master @a ~ ~ ~ 1.0 2.0 1.0
 scoreboard players set Mission Numbers 200
 scoreboard objectives modify display displayname {"text":"Status:","color":"green"}

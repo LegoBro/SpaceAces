@@ -1,0 +1,2 @@
+summon zombie_villager ~ ~ ~ {PersistenceRequired:1b,CustomNameVisible:1b,Team:"red",Health:50f,Tags:["entity","hb_training","poison_aura","poison_bot","bot"],CustomName:"{\"text\":\"Zap Bot\"}",Attributes:[{Name:generic.maxHealth,Base:300},{Name:generic.followRange,Base:64},{Name:generic.movementSpeed,Base:.25},{Name:generic.attackDamage,Base:50},{Name:generic.armor,Base:0},{Name:generic.armorToughness,Base:0}]}
+execute as @e[type=zombie_villager,distance=0,limit=1] store result score @s id run data get entity @s UUIDLeast .0000000000001

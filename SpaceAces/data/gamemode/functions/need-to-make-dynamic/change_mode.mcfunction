@@ -1,6 +1,0 @@
-scoreboard players add Gamemode Numbers 1
-execute if score Gamemode Numbers matches 3.. run scoreboard players set Gamemode Numbers 0
-execute if score Gamemode Numbers matches 0 run data merge block 9 200 65 {Text2:"{\"text\":\"\",\"color\":\"black\"}",Text2:"{\"text\":\"Mission Type:\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function gamemode:cycle\"}}",Text3:"{\"text\":\"Duel\",\"color\":\"dark_gray\",\"bold\":true}"}
-execute if score Gamemode Numbers matches 1 run data merge block 9 200 65 {Text2:"{\"text\":\"\",\"color\":\"black\"}",Text2:"{\"text\":\"Mission Type:\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function gamemode:cycle\"}}",Text3:"{\"text\":\"TDM\",\"color\":\"gray\",\"bold\":true}"}
-execute if score Gamemode Numbers matches 2 run data merge block 9 200 65 {Text2:"{\"text\":\"\",\"color\":\"black\"}",Text2:"{\"text\":\"Mission Type:\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"function gamemode:cycle\"}}",Text3:"{\"text\":\"Setback\",\"color\":\"black\",\"bold\":true}"}
-function gamemode:update_maps

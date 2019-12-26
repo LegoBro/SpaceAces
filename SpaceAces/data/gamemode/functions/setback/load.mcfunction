@@ -10,5 +10,5 @@
     scoreboard players set point Numbers 0
     bossbar set minecraft:blue name ["",{"text":"IGSR Capture Progress","color":"blue"}]
     bossbar set minecraft:red name ["",{"text":"RLU Capture Progress","color":"red"}]
-    bossbar set minecraft:red max 240000
-    bossbar set minecraft:blue max 240000
+    execute store result bossbar minecraft:red max run scoreboard players get setScore Numbers
+    execute store result bossbar minecraft:blue max run scoreboard players get setScore Numbers

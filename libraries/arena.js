@@ -42,6 +42,21 @@ let gamemode_cycle = `# Cycles the currently selected gamemode (dynamic)
 scoreboard players add Gamemode Numbers 1
 execute if score Gamemode Numbers matches ${Object.keys(gamemodes.gamemodes).length}.. run scoreboard players set Gamemode Numbers 0`;
 
+let console_dictionary = `# Links console trigger to different functionalities (dynamic)
+execute if score @s console matches 1 run function gamemode:console/1
+execute if score @s console matches 2 run function gamemode:console/2
+execute if score @s console matches 3 run function gamemode:console/3
+execute if score @s console matches 4 run function gamemode:console/4
+execute if score @s console matches 5 run function gamemode:console/5
+execute if score @s console matches 6 run function gamemode:console/6`;
+
+let console_trigger = 7;
+let pages = `"[\\"\\",{\\"text\\":\\"Master Settings\\",\\"bold\\":true,\\"color\\":\\"white\\"},{\\"text\\":\\"\\\\n\\"},{\\"text\\":\\"\\\\n\\"},{\\"text\\":\\"Min Players \\",\\"color\\":\\"gray\\"},{\\"text\\":\\"- \\",\\"color\\":\\"red\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/trigger console set 1\\"}},{\\"score\\":{\\"name\\":\\"MinPlay\\",\\"objective\\":\\"Numbers\\"},\\"color\\":\\"gold\\"},{\\"text\\":\\" + \\",\\"color\\":\\"green\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/trigger console set 2\\"}},{\\"text\\":\\"\\\\n\\"},{\\"text\\":\\"Max Players \\",\\"color\\":\\"gray\\"},{\\"text\\":\\"- \\",\\"color\\":\\"red\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/trigger console set 3\\"}},{\\"score\\":{\\"name\\":\\"MaxPlay\\",\\"objective\\":\\"Numbers\\"},\\"color\\":\\"gold\\"},{\\"text\\":\\" + \\",\\"color\\":\\"green\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/trigger console set 4\\"}},{\\"text\\":\\"\\\\n\\"},{\\"text\\":\\"Random Classes \\",\\"color\\":\\"gray\\"},{\\"text\\":\\"toggle\\",\\"color\\":\\"dark_gray\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/trigger console set 5\\"}},{\\"text\\":\\"\\\\n\\"},{\\"text\\":\\"Balance Teams \\",\\"color\\":\\"gray\\"},{\\"text\\":\\"toggle\\",\\"color\\":\\"dark_gray\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/trigger console set 6\\"}}]"`
+
+let console_load = `# Sets the default values for the console (dynamic)
+scoreboard players set MinPlay Numbers 2
+scoreboard players set MaxPlay Numbers 10`;
+
 for (let i = 0; i < Object.keys( gamemodes.gamemodes ).length; i++) { // loops for every gamemode within the gamemodes.json file
   const name = Object.keys( gamemodes.gamemodes )[i]; // writes the current gamemode's name to name
   const obj = gamemodes.gamemodes[name]; // creates an object for simpler functions later
@@ -72,6 +87,24 @@ for (let i = 0; i < Object.keys( gamemodes.gamemodes ).length; i++) { // loops f
     ${obj.extra[j]}`;
   }
 
+  // logic and scripting for gamemode options (found at main console)
+  if(obj.settings != null && Object.keys(obj.settings).length>0) {
+    let page = `{\\"text\\":\\"${gamemodes.gamemodes[name].display_name} \\",\\"color\\":\\"white\\",\\"bold\\":\\"true\\"},{\\"text\\":\\"\\\\n\\"}`;
+    for(let j = 0; j < Object.keys(obj.settings).length; j++) {
+      if(obj.settings[Object.keys(obj.settings)[j]].type == "integer") {
+        page = `${page},{\\"text\\":\\"\\\\n\\"},{\\"text\\":\\"${obj.settings[Object.keys(obj.settings)[j]].name} \\",\\"color\\":\\"gray\\"},{\\"text\\":\\"- \\",\\"color\\":\\"red\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/trigger console set ${i+1}1${j}\\"}},{\\"score\\":{\\"name\\":\\"${obj.settings[Object.keys(obj.settings)[j]].scoreboard}\\",\\"objective\\":\\"Numbers\\"},\\"color\\":\\"gold\\"},{\\"text\\":\\" + \\",\\"color\\":\\"green\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"/trigger console set ${i+1}2${j}\\"}}`;
+        if(obj.settings[Object.keys(obj.settings)[j]].default) {
+          console_load = `${console_load}\nscoreboard players set ${obj.settings[Object.keys(obj.settings)[j]].scoreboard} Numbers ${obj.settings[Object.keys(obj.settings)[j]].default}`;
+        }
+        console_dictionary = `${console_dictionary}\n
+        execute if score @s console matches ${i+1}1${j} run function gamemode:console/${i+1}1${j}
+        execute if score @s console matches ${i+1}2${j} run function gamemode:console/${i+1}2${j}`;
+      }
+    }
+    pages = `${pages},"[\\"\\",${page}]"`;
+  }
+
+
   afs.mkdirsSync(__basedir+`/SpaceAces/data/gamemode/functions/${name}`);
   fs.writeFileSync(__basedir+`/SpaceAces/data/gamemode/functions/${name}/load.mcfunction`,gmf);
   fs.writeFileSync(__basedir+`/SpaceAces/data/gamemode/functions/${name}/display.mcfunction`,display_gamemode);
@@ -81,15 +114,24 @@ for (let i = 0; i < Object.keys( gamemodes.gamemodes ).length; i++) { // loops f
   execute if score ActiveMode Numbers matches ${i+1} run function gamemode:${name}/running`;
 
   gamemode_cycle = `${gamemode_cycle}
-  execute if score Gamemode Numbers matches ${i} run data merge block 9 200 65 {Text2:"{\\"text\\":\\"\\",\\"color\\":\\"black\\"}",Text2:"{\\"text\\":\\"Mission Type:\\",\\"color\\":\\"green\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"function gamemode:cycle\\"}}",Text3:"{\\"text\\":\\"${obj.display_name}\\",\\"color\\":\\"dark_gray\\",\\"bold\\":true}"}
+  execute if score Gamemode Numbers matches ${i} run data merge block 9 200 65 {Text2:"{\\"text\\":\\"\\",\\"color\\":\\"black\\"}",Text2:"{\\"text\\":\\"Mission Type:\\",\\"color\\":\\"green\\",\\"clickEvent\\":{\\"action\\":\\"run_command\\",\\"value\\":\\"function gamemode:cycle\\"}}",Text3:"{\\"text\\":\\"${obj.display_name}\\",\\"color\\":\\"gray\\",\\"bold\\":true}"}
   execute if score Gamemode Numbers matches ${i} run function gamemode:${name}/display
-  execute if score Gamemode Numbers matches ${i} run scoreboard players set MinPlay Numbers ${obj.min_players}
-  execute if score Gamemode Numbers matches ${i} run scoreboard players set RecPlay Numbers ${obj.rec_players}`;
+  execute if score Gamemode Numbers matches ${i} run scoreboard players set GameMinPlay Numbers ${obj.min_players}
+  execute if score Gamemode Numbers matches ${i} run scoreboard players set GameRecPlay Numbers ${obj.rec_players}`;
 
   gamemode_load = `${gamemode_load}
   execute if score Gamemode Numbers matches ${i} run function gamemode:${name}/load`
 
 }
+
+// example: data merge block 8 200 66 {Book:{tag:{pages:["[\"\",{\"text\":\"One\",\"color\":\"dark_blue\"},{\"text\":\"Two\",\"color\":\"dark_green\"}]","",""]}}}
+const console_book = `data merge block 8 200 66 {Book:{tag:{pages:[${pages}],resolved:0b}}}`;
+afs.mkdirsSync(__basedir+`/SpaceAces/data/gamemode/functions/console/`);
+fs.writeFileSync(__basedir+`/SpaceAces/data/gamemode/functions/console/book.mcfunction`,console_book);
+fs.writeFileSync(__basedir+`/SpaceAces/data/gamemode/functions/console/load.mcfunction`,console_load);
+// save the dictionary lookup to file
+fs.writeFileSync(__basedir+`/SpaceAces/data/gamemode/functions/console/dictionary.mcfunction`,console_dictionary + "\nscoreboard players reset @s console");
+
 
 fs.writeFileSync(__basedir+`/SpaceAces/data/gamemode/functions/running.mcfunction`,gamemode_running);
 fs.writeFileSync(__basedir+`/SpaceAces/data/gamemode/functions/cycle.mcfunction`,gamemode_cycle);
@@ -130,3 +172,48 @@ tag @e[type=item_frame,tag=!processed] add processed
 tag @a[tag=awaiting] add in_game
 tag @a[tag=awaiting] remove awaiting`;
 fs.writeFileSync(__basedir+`/SpaceAces/data/arena/functions/load.mcfunction`,loadArena.replace(/\t/g,''));
+
+const waves = JSON.parse(fs.readFileSync(__basedir+`/libraries/waves.json`));
+let waveFinder = `# Relates the wave with the score of the wave (dynamic)`;
+for(let i = 0; i < Object.keys(waves.waves).length; i++) {
+  const wave = waves.waves[i+1];
+  waveFinder = `execute if score wave Numbers matches ${i+1} run function gamemode:escape/wave/${i+1}\n${waveFinder}`;
+  let waveCommands = `#Commands for wave ${i+1} (dynamic)\nscoreboard players set waveDelay Numbers ${100+(i*100)}`;
+  let totalEnemies = 0;
+  for(let j = 0; j < wave.bot; j++) {
+    waveCommands = `${waveCommands}\nexecute as @a[tag=escape] at @e[type=item_frame,sort=random,limit=1,tag=spawner,tag=active] run function enemies:summon/bot`
+    totalEnemies++;
+  }
+  for(let j = 0; j < wave.armored_bot; j++) {
+    waveCommands = `${waveCommands}\nexecute as @a[tag=escape] at @e[type=item_frame,sort=random,limit=1,tag=spawner,tag=active] run function enemies:summon/armored_bot`
+    totalEnemies++;
+  }
+  for(let j = 0; j < wave.mine_runner; j++) {
+    waveCommands = `${waveCommands}\nexecute as @a[tag=escape] at @e[type=item_frame,sort=random,limit=1,tag=spawner,tag=active] run function enemies:summon/mine_runner`
+    totalEnemies++;
+  }
+  for(let j = 0; j < wave.poison_bot; j++) {
+    waveCommands = `${waveCommands}\nexecute as @a[tag=escape] at @e[type=item_frame,sort=random,limit=1,tag=spawner,tag=active] run function enemies:summon/poison_bot`
+    totalEnemies++;
+  }
+  for(let j = 0; j < wave.ranged_bot; j++) {
+    waveCommands = `${waveCommands}\nexecute as @a[tag=escape] at @e[type=item_frame,sort=random,limit=1,tag=spawner,tag=active] run function enemies:summon/ranged_bot`
+    totalEnemies++;
+  }
+  for(let j = 0; j < wave.ranged_explosive_bot; j++) {
+    waveCommands = `${waveCommands}\nexecute as @a[tag=escape] at @e[type=item_frame,sort=random,limit=1,tag=spawner,tag=active] run function enemies:summon/ranged_explosive_bot`
+    totalEnemies++;
+  }
+  for(let j = 0; j < wave.slow_bot; j++) {
+    waveCommands = `${waveCommands}\nexecute as @a[tag=escape] at @e[type=item_frame,sort=random,limit=1,tag=spawner,tag=active] run function enemies:summon/slow_bot`
+    totalEnemies++;
+  }
+  for(let j = 0; j < wave.zap_bot; j++) {
+    waveCommands = `${waveCommands}\nexecute as @a[tag=escape] at @e[type=item_frame,sort=random,limit=1,tag=spawner,tag=active] run function enemies:summon/zap_bot`
+    totalEnemies++;
+  }
+
+  waveCommands = `${waveCommands}\nbossbar set minecraft:main max ${100+(i*100)}\nscoreboard players operation currency Numbers += wave Numbers\nscoreboard players set wave Numbers ${i+2}`;
+  fs.writeFileSync(__basedir+`/SpaceAces/data/gamemode/functions/escape/wave/${i+1}.mcfunction`,waveCommands);
+}
+fs.writeFileSync(__basedir+`/SpaceAces/data/gamemode/functions/escape/wave/finder.mcfunction`,waveFinder);

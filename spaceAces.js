@@ -92,12 +92,13 @@ for(let i=0;i<Object.keys(archive.characters).length;i++) {
   fs.writeFileSync(`./SpaceAces/data/archives/functions/${Object.keys(archive.characters)[i]}.mcfunction`,characterCommand)
 };
 
-
+Constant(1);
 Constant(2);
 Constant(20);
 Constant(10);
 Constant(5);
 Constant(16);
+Constant(15);
 
 
 {//Update Armor
@@ -110,18 +111,18 @@ replaceitem entity @s[level=15..,team=blue,tag=!invis] armor.chest chainmail_che
 `;
 let update_armor_red = `#updates armor to display health
 scoreboard players set @s[scores={displayHealth=10..}] displayHealth 9
-replaceitem entity @s[level=..14,team=red,tag=!invis] armor.legs leather_leggings{HideFlags:7,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:587429,UUIDMost:448322}],Unbreakable:1,display:{color:16711680},Enchantments:[{id:"minecraft:binding_curse",lvl:1}]}
-replaceitem entity @s[level=15..,team=red,tag=!invis] armor.legs golden_leggings{HideFlags:63,Unbreakable:1b,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:859049,UUIDMost:39080}]}
-replaceitem entity @s[level=..14,team=red,tag=!invis] armor.chest leather_chestplate{HideFlags:7,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:587429,UUIDMost:448322}],Unbreakable:1,display:{color:16711680},Enchantments:[{id:"minecraft:binding_curse",lvl:1}]}
-replaceitem entity @s[level=15..,team=red,tag=!invis] armor.chest golden_chestplate{HideFlags:63,Unbreakable:1b,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:859049,UUIDMost:39080}]}`;
+replaceitem entity @s[level=..14,team=red,tag=!invis,tag=!escape] armor.legs leather_leggings{HideFlags:7,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:587429,UUIDMost:448322}],Unbreakable:1,display:{color:16711680},Enchantments:[{id:"minecraft:binding_curse",lvl:1}]}
+replaceitem entity @s[level=15..,team=red,tag=!invis,tag=!escape] armor.legs golden_leggings{HideFlags:63,Unbreakable:1b,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:859049,UUIDMost:39080}]}
+replaceitem entity @s[level=..14,team=red,tag=!invis,tag=!escape] armor.chest leather_chestplate{HideFlags:7,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:587429,UUIDMost:448322}],Unbreakable:1,display:{color:16711680},Enchantments:[{id:"minecraft:binding_curse",lvl:1}]}
+replaceitem entity @s[level=15..,team=red,tag=!invis,tag=!escape] armor.chest golden_chestplate{HideFlags:63,Unbreakable:1b,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:859049,UUIDMost:39080}]}`;
 for(let i=0;i<10;i++) {
   update_armor_blue = `${update_armor_blue}
     replaceitem entity @s[level=..14,team=blue,tag=!invis,scores={displayHealth=${9-i}}] armor.feet minecraft:leather_boots{HideFlags:7,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:587429,UUIDMost:448322},{AttributeName:"generic.maxHealth",Name:"generic.maxHealth",Amount:${-i/10},Operation:2,UUIDLeast:826507,UUIDMost:221912,Slot:"feet"}],Unbreakable:1,display:{color:524543},Enchantments:[{id:"minecraft:binding_curse",lvl:1}]}
     replaceitem entity @s[level=15..,team=blue,tag=!invis,scores={displayHealth=${9-i}}] armor.feet minecraft:chainmail_boots{HideFlags:63,Unbreakable:1b,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:859049,UUIDMost:39080},{AttributeName:"generic.armorToughness",Name:"generic.armorToughness",Amount:0,Operation:0,UUIDLeast:445359,UUIDMost:188469},{AttributeName:"generic.maxHealth",Name:"generic.maxHealth",Amount:${-i/10},Operation:2,UUIDLeast:826507,UUIDMost:221912,Slot:"feet"}]}`
 
   update_armor_red = `${update_armor_red}
-    replaceitem entity @s[level=..9,team=red,tag=!invis,scores={displayHealth=${9-i}}] armor.feet minecraft:leather_boots{HideFlags:7,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:587429,UUIDMost:448322},{AttributeName:"generic.maxHealth",Name:"generic.maxHealth",Amount:${-i/10},Operation:2,UUIDLeast:826507,UUIDMost:221912,Slot:"feet"}],Unbreakable:1,display:{color:16711680},Enchantments:[{id:"minecraft:binding_curse",lvl:1}]}
-    replaceitem entity @s[level=10..,team=red,tag=!invis,scores={displayHealth=${9-i}}] armor.feet minecraft:golden_boots{HideFlags:63,Unbreakable:1b,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:859049,UUIDMost:39080},{AttributeName:"generic.armorToughness",Name:"generic.armorToughness",Amount:0,Operation:0,UUIDLeast:445359,UUIDMost:188469},{AttributeName:"generic.maxHealth",Name:"generic.maxHealth",Amount:${-i/10},Operation:2,UUIDLeast:826507,UUIDMost:221912,Slot:"feet"}]}`
+    replaceitem entity @s[level=..9,team=red,tag=!invis,tag=!escape,scores={displayHealth=${9-i}}] armor.feet minecraft:leather_boots{HideFlags:7,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:587429,UUIDMost:448322},{AttributeName:"generic.maxHealth",Name:"generic.maxHealth",Amount:${-i/10},Operation:2,UUIDLeast:826507,UUIDMost:221912,Slot:"feet"}],Unbreakable:1,display:{color:16711680},Enchantments:[{id:"minecraft:binding_curse",lvl:1}]}
+    replaceitem entity @s[level=10..,team=red,tag=!invis,tag=!escape,scores={displayHealth=${9-i}}] armor.feet minecraft:golden_boots{HideFlags:63,Unbreakable:1b,Enchantments:[{id:"minecraft:binding_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:859049,UUIDMost:39080},{AttributeName:"generic.armorToughness",Name:"generic.armorToughness",Amount:0,Operation:0,UUIDLeast:445359,UUIDMost:188469},{AttributeName:"generic.maxHealth",Name:"generic.maxHealth",Amount:${-i/10},Operation:2,UUIDLeast:826507,UUIDMost:221912,Slot:"feet"}]}`
 };
 fs.writeFileSync(`./SpaceAces/data/health/functions/update_armor_blue.mcfunction`,update_armor_blue.replace(/\t/g,''));
 fs.writeFileSync(`./SpaceAces/data/health/functions/update_armor_red.mcfunction`,update_armor_red.replace(/\t/g,''));}

@@ -1,7 +1,9 @@
-effect give @a[team=!lobby] resistance 30 4 true
+effect give @a[team=!lobby] resistance 1000000 4 true
 execute as @e store result score @s fire run data get entity @s Fire
 scoreboard players add @e[scores={fire=1..},nbt=!{ActiveEffects:[{Id:12b}]},type=!item_frame,type=!arrow] raw_damage 3
 scoreboard players add @e[nbt={ActiveEffects:[{Id:27b}]}] raw_damage 2
+execute as @e[tag=entity] unless score @s maxHealth = @s maxHealth store result score @s health run data get entity @s Health
+execute as @e[tag=entity] unless score @s maxHealth = @s maxHealth store result score @s maxHealth run data get entity @s Attributes[0].Base
 execute as @e[tag=entity] store result score @s displayHealth run data get entity @s Health
 execute as @e[tag=entity] if score @s health > @s displayHealth run scoreboard players operation @s damage -= @s displayHealth
 execute as @e[tag=entity] if score @s health > @s displayHealth run scoreboard players operation @s damage += @s health
@@ -19,7 +21,7 @@ scoreboard players reset @e[tag=health_pack,scores={i=10..}] i
 execute as @e[tag=health_pack,scores={j=1..}] at @s if entity @p[distance=...5,team=!spectator] run scoreboard players operation @p healing += @s j
 execute as @e[tag=health_pack,tag=weak_health,scores={j=50..}] at @s if entity @p[distance=...5,team=!spectator] run effect give @p saturation 4 0 true
 execute as @e[tag=health_pack,tag=weak_health,scores={j=50..}] at @s if entity @p[distance=...5,team=!spectator] run playsound minecraft:health_pack master @a ~ ~ ~ 1 2
-execute as @e[tag=health_pack,tag=strong_health,scores={j=100..}] at @s if entity @p[distance=...5,team=!spectator] run effect give @p saturation 4 0 true
+execute as @e[tag=health_pack,tag=strong_health,scores={j=100..}] at @s if entity @p[distance=...5,team=!spectator] run effect give @p saturation 8 0 true
 execute as @e[tag=health_pack,tag=strong_health,scores={j=100..}] at @s if entity @p[distance=...5,team=!spectator] run playsound minecraft:health_pack master @a ~ ~ ~ 1 1
 execute as @e[tag=health_pack,scores={j=1..}] at @s if entity @p[distance=...5,team=!spectator] run scoreboard players set @s j 0
 scoreboard players add @a[scores={displayHealth=..2},team=!spectator,team=!lobby] lowHealth 1

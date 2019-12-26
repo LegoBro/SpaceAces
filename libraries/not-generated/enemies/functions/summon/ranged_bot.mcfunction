@@ -1,0 +1,2 @@
+summon skeleton ~ ~ ~ {PersistenceRequired:1b,CustomNameVisible:1b,Team:"red",Health:50f,Tags:["entity","hb_training","bot","ranged","standard"],CustomName:"{\"text\":\"Ranged Bot\"}",Attributes:[{Name:generic.maxHealth,Base:50},{Name:generic.followRange,Base:64},{Name:generic.movementSpeed,Base:.25},{Name:generic.attackDamage,Base:20},{Name:generic.armor,Base:0},{Name:generic.armorToughness,Base:0}]}
+execute as @e[type=skeleton,distance=0] store result score @s id run data get entity @s UUIDLeast .0000000000001

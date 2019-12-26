@@ -1,0 +1,2 @@
+summon husk ~ ~ ~ {PersistenceRequired:1b,CustomNameVisible:1b,Team:"red",Health:200f,Tags:["entity","hb_training","slow_aura","bot"],CustomName:"{\"text\":\"Slow Bot\"}",Attributes:[{Name:generic.maxHealth,Base:200},{Name:generic.followRange,Base:64},{Name:generic.movementSpeed,Base:.15},{Name:generic.attackDamage,Base:20},{Name:generic.armor,Base:0},{Name:generic.armorToughness,Base:0}]}
+execute as @e[type=husk,distance=0,limit=1] store result score @s id run data get entity @s UUIDLeast .0000000000001

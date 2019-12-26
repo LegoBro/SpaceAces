@@ -1,6 +1,6 @@
 #Commands ran for setback
 bossbar set minecraft:main name ["",{"text":"Point Multiplier","color":"white"}]
-bossbar set minecraft:main max 200
+execute store result bossbar minecraft:main max run scoreboard players get setRate Numbers
 scoreboard players add captureSound i 1
 execute at @e[type=item_frame,tag=capture_point] if entity @p[team=!spectator,distance=..5] run bossbar set main players @a
 execute at @e[type=item_frame,tag=capture_point] unless entity @p[team=!spectator,distance=..5] run bossbar set main players
@@ -26,6 +26,7 @@ execute as @a[team=blue,scores={i=100..,rightClick=1},tag=in_game,nbt={SelectedI
 execute as @a[team=red,scores={i=100..,rightClick=1},tag=in_game,nbt={SelectedItemSlot:8}] if score redCapture Numbers matches 0..80000 run tp @s @e[type=item_frame,tag=forward_red_spawn,limit=1]
 execute as @a[team=red,scores={i=100..,rightClick=1},tag=in_game,nbt={SelectedItemSlot:8}] if score redCapture Numbers matches 80001..160000 run tp @s @e[type=item_frame,tag=middle_red_spawn,limit=1]
 execute as @a[team=red,scores={i=100..,rightClick=1},tag=in_game,nbt={SelectedItemSlot:8}] if score redCapture Numbers matches 160001.. run tp @s @e[type=item_frame,tag=red_spawn,limit=1]
+execute as @a[scores={i=100..,rightClick=1},tag=in_game,nbt={SelectedItemSlot:8}] at @s run function gamemode:respawn
 execute as @a[scores={i=100..,rightClick=1},tag=in_game,nbt={SelectedItemSlot:8}] at @s run tp @s ~ ~ ~ 0 0
 scoreboard players reset @a[scores={i=100..,rightClick=1},tag=in_game,nbt={SelectedItemSlot:8}] i
 scoreboard players reset @a[scores={rightClick=1},tag=in_game,nbt={SelectedItemSlot:8}] rightClick

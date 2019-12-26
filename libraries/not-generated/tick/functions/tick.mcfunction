@@ -24,16 +24,25 @@ kill @e[nbt={Effects:[{Id:11b}]},type=area_effect_cloud]
 # Team setup
 #Blue
 execute if entity @a[tag=in_game] run particle minecraft:angry_villager 5.75 195.06 9.49 .5 .5 .5 .01 2 force
-execute unless entity @a[tag=in_game] run team join blue @a[x=4,y=195,z=8,dx=2,dy=3,dz=2]
+execute unless entity @a[tag=in_game] unless score Gamemode Numbers matches 4 if score TotPlay Numbers >= MaxPlay Numbers run particle minecraft:angry_villager 5.75 195.06 9.49 .5 .5 .5 .01 2 force
+execute unless entity @a[tag=in_game] unless score Gamemode Numbers matches 4 unless score TotPlay Numbers >= MaxPlay Numbers if entity @e[type=villager,tag=pilot,tag=balanceTeams] if score blueTeam Numbers > redTeam Numbers run particle minecraft:angry_villager 5.75 195.06 9.49 .5 .5 .5 .01 2 force
+execute unless entity @a[tag=in_game] unless score Gamemode Numbers matches 4 unless score TotPlay Numbers >= MaxPlay Numbers unless entity @e[type=villager,tag=pilot,tag=balanceTeams] run team join blue @a[x=4,y=195,z=8,dx=2,dy=3,dz=2]
+execute unless entity @a[tag=in_game] unless score Gamemode Numbers matches 4 unless score TotPlay Numbers >= MaxPlay Numbers if entity @e[type=villager,tag=pilot,tag=balanceTeams] unless score blueTeam Numbers > redTeam Numbers run team join blue @a[x=4,y=195,z=8,dx=2,dy=3,dz=2]
+execute unless entity @a[tag=in_game] if score Gamemode Numbers matches 4 run team join blue @a[x=4,y=195,z=8,dx=2,dy=3,dz=2]
 tp @a[x=4,y=195,z=8,dx=2,dy=3,dz=2,team=blue] 6 195 -1 90 0
 #Red
 execute if entity @a[tag=in_game] run particle minecraft:angry_villager 11.75 195.06 9.49 .5 .5 .5 .01 2 force
-execute unless entity @a[tag=in_game] run team join red @a[x=10,y=195,z=8,dx=2,dy=3,dz=2]
+execute unless entity @a[tag=in_game] unless score Gamemode Numbers matches 4 if score TotPlay Numbers >= MaxPlay Numbers run particle minecraft:angry_villager 11.75 195.06 9.49 .5 .5 .5 .01 2 force
+execute unless entity @a[tag=in_game] unless score Gamemode Numbers matches 4 unless score TotPlay Numbers >= MaxPlay Numbers if entity @e[type=villager,tag=pilot,tag=balanceTeams] if score redTeam Numbers > blueTeam Numbers run particle minecraft:angry_villager 11.75 195.06 9.49 .5 .5 .5 .01 2 force
+execute unless entity @a[tag=in_game] unless score Gamemode Numbers matches 4 unless score TotPlay Numbers >= MaxPlay Numbers unless entity @e[type=villager,tag=pilot,tag=balanceTeams] run team join red @a[x=10,y=195,z=8,dx=2,dy=3,dz=2]
+execute unless entity @a[tag=in_game] unless score Gamemode Numbers matches 4 unless score TotPlay Numbers >= MaxPlay Numbers if entity @e[type=villager,tag=pilot,tag=balanceTeams] unless score redTeam Numbers > blueTeam Numbers run team join red @a[x=10,y=195,z=8,dx=2,dy=3,dz=2]
+execute unless entity @a[tag=in_game] if score Gamemode Numbers matches 4 run particle minecraft:angry_villager 11.75 195.06 9.49 .5 .5 .5 .01 2 force
 tp @a[x=10,y=195,z=8,dx=2,dy=3,dz=2,team=red] 10 195 -1 -90 0
 #spectator
 execute as @a[x=7,y=195,z=27,dx=2,dy=3,dz=2] at @s if block ~ ~ ~ light_gray_carpet run team join spectator @s
 execute if entity @a[tag=in_game] run gamemode spectator @a[x=7,y=195,z=27,dx=2,dy=3,dz=2,team=spectator]
-execute if entity @a[tag=in_game] run tp @a[x=7,y=195,z=27,dx=2,dy=3,dz=2,team=spectator] 20015 15 15
+execute if entity @a[tag=in_game] unless score Gamemode Numbers matches 4 run tp @a[x=7,y=195,z=27,dx=2,dy=3,dz=2,team=spectator] 20015 15 15
+execute if entity @a[tag=in_game] if score Gamemode Numbers matches 4 run tp @a[x=7,y=195,z=27,dx=2,dy=3,dz=2,team=spectator] 30015 15 15
 title @a[team=spectator] actionbar ["",{"text":"[","color":"gray"},{"text":"Spectating, leave the area to quit.","color":"green"},{"text":"]","color":"gray"}]
 execute as @a[gamemode=spectator,team=spectator,tag=!in_game] at @s if block ~ ~ ~ barrier run function load:spawn
 #lobby
@@ -53,6 +62,13 @@ execute unless entity @a[tag=in_game] run particle minecraft:angry_villager 8.75
 execute if score Mission Numbers matches 1.. run function gamemode:countdown
 execute if score ActiveMode Numbers matches 1.. if score Prestart Numbers matches ..119 run function gamemode:loading_gamemode
 execute if score ActiveMode Numbers matches 1.. unless score Prestart Numbers matches ..119 run function gamemode:running
+
+# Ship console dictionary
+execute as @a[scores={console=1..}] run function gamemode:console/dictionary
+
+# Other console stuff
+function gamemode:console/book
+scoreboard players enable @a console
 
 # if player is in training area
 execute if entity @a[tag=trainee] run function gamemode:training

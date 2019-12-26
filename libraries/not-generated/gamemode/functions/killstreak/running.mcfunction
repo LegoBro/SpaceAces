@@ -7,8 +7,8 @@ execute as @a[scores={health=..0,fire=..-20},tag=in_game,team=red] run tp @s @e[
 execute as @a[scores={health=..0,fire=..-20},tag=in_game] at @s run tp @s ~ ~ ~ 0 0
 execute as @a[scores={health=..0,fire=..-20},tag=in_game] at @s run function gamemode:respawn
 execute unless entity @a[tag=in_game,team=blue] unless entity @a[tag=in_game,team=red] run scoreboard players set ActiveMode Numbers 0
-execute if entity @a[tag=in_game,team=red,scores={kills=3..}] run function gamemode:red_win
-execute if entity @a[tag=in_game,team=blue,scores={kills=3..}] run function gamemode:blue_win
+execute if score @r[tag=in_game,team=red] kills >= killstreakKills Numbers run function gamemode:red_win
+execute if score @r[tag=in_game,team=blue] kills >= killstreakKills Numbers run function gamemode:blue_win
 bossbar set main players
 scoreboard objectives modify display displayname {"text":"Killstreaks:","color":"green"}
 execute as @a[tag=in_game] run scoreboard players operation @s display = @s kills

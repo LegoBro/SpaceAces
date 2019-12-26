@@ -30,6 +30,7 @@ scoreboard objectives add fire dummy
 scoreboard objectives add crouching custom:sneak_time
 scoreboard objectives add energy food
 scoreboard objectives add worm_hole trigger
+scoreboard objectives add console trigger
 scoreboard objectives add talkToCharacter minecraft.custom:minecraft.talked_to_villager
 scoreboard objectives add invis dummy
 scoreboard objectives add resist dummy

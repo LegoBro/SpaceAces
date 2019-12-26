@@ -1,0 +1,2 @@
+summon silverfish ~ ~ ~ {CustomNameVisible:1b,Team:"red",Health:20f,Tags:["entity","hb_mine","mine_runner"],CustomName:"{\"text\":\"Mine Runner\"}",Attributes:[{Name:generic.maxHealth,Base:20},{Name:generic.followRange,Base:128},{Name:generic.movementSpeed,Base:.5},{Name:generic.attackDamage,Base:5},{Name:generic.armor,Base:0},{Name:generic.armorToughness,Base:0}]}
+execute as @e[type=silverfish,distance=0,limit=1] store result score @s id run data get entity @s UUIDLeast .0000000000001

@@ -1,3 +1,4 @@
+execute if entity @e[type=villager,tag=randomClass,tag=pilot] run function classes:random
 effect clear @s
 effect give @s saturation 10 100 true
 effect give @s jump_boost 1 255 true
